@@ -1,0 +1,32 @@
+# Documentation files
+PLAN.md
+AGENTS.md
+Project.md
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+build/
+dist/
+*.egg-info/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Data
+*.parquet
+*.db
+*.sqlite
+
+# Replit
+.replit.nix
+.cache/
+.config/

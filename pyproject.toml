@@ -1,0 +1,29 @@
+[project]
+name = "hemline"
+version = "0.1.0"
+description = "A movement atlas for runway fashion trends"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "Apache-2.0" }
+dependencies = [
+    "fastapi>=0.104.0",
+    "uvicorn[standard]>=0.24.0",
+    "pydantic>=2.5.0",
+    "numpy>=1.26.0",
+    "scipy>=1.11.0",
+    "scikit-learn>=1.3.0",
+    "hdbscan>=0.8.33",
+    "umap-learn>=0.5.5",
+    "pyarrow>=14.0.0",
+    "sqlite-vec>=0.0.1a8",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-asyncio>=0.21.0",
+]
+
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
