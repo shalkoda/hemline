@@ -58,18 +58,16 @@ function buildTimeline() {
     updateTimeline();
 }
 
-// Update timeline shading based on current season
+// Update timeline shading based on scrubber float position
 function updateTimeline() {
     if (!timelineEl) return;
+    const pos = parseFloat(scrubber.value);
     const seasons = timelineEl.querySelectorAll('.season');
     seasons.forEach((el, i) => {
-        el.classList.remove('active', 'semi');
-        const dist = Math.abs(i - currentFrameIndex);
-        if (dist === 0) {
-            el.classList.add('active');
-        } else if (dist === 1) {
-            el.classList.add('semi');
-        }
+        const dist = Math.abs(i - pos);
+        // opacity: 1 at dist=0, ~0.55 at dist=1, ~0.25 beyond
+        const opacity = Math.max(0.18, 1 - dist * 0.55);
+        el.style.color = `rgba(232, 232, 232, ${opacity.toFixed(3)})`;
     });
 }
 
@@ -259,7 +257,7 @@ playPauseBtn.addEventListener('click', () => {
 });
 
 scrubber.addEventListener('input', (e) => {
-    currentFrameIndex = parseInt(e.target.value);
+    currentFrameIndex = Math.round(parseFloat(e.target.value));
     render();
     updateTrendingList();
     updateTimeline();

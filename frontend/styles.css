@@ -152,14 +152,6 @@ main {
     user-select: none;
 }
 
-.timeline .season.active {
-    color: #e8e8e8;
-    opacity: 1;
-}
-
-.timeline .season.semi {
-    color: rgba(232, 232, 232, 0.55);
-}
 
 #currentSeason {
     font-size: 0.875rem;
