@@ -247,6 +247,20 @@ sizeToggle.addEventListener('change', (e) => {
     render();
 });
 
+// Font switcher
+const fontSelect = document.getElementById('fontSelect');
+if (fontSelect) {
+    fontSelect.addEventListener('change', (e) => {
+        const body = document.body;
+        body.classList.remove('font-space', 'font-playfair');
+        if (e.target.value === 'space') {
+            body.classList.add('font-space');
+        } else if (e.target.value === 'playfair') {
+            body.classList.add('font-playfair');
+        }
+    });
+}
+
 // Initialize
 resizeCanvas();
 loadFrames();

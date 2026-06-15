@@ -26,6 +26,34 @@ header {
     gap: 1rem;
 }
 
+.font-switcher {
+    margin-left: auto;
+}
+
+.font-switcher select {
+    background: #1a1a20;
+    border: 1px solid #2a2a30;
+    color: #e8e8e8;
+    padding: 0.4rem 0.75rem;
+    border-radius: 3px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    outline: none;
+}
+
+.font-switcher select:hover {
+    border-color: #3a3a40;
+}
+
+/* Font families */
+body.font-space {
+    font-family: 'Space Grotesk', 'SF Mono', sans-serif;
+}
+
+body.font-playfair {
+    font-family: 'Playfair Display', 'Georgia', serif;
+}
+
 h1 {
     font-size: 1.5rem;
     font-weight: 600;
