@@ -1,0 +1,276 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'Courier New', monospace;
+    background: #08080d;
+    color: #e8e8e8;
+    overflow: hidden;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    gap: 1rem;
+}
+
+header {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+}
+
+h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+.subtitle {
+    font-size: 0.875rem;
+    color: #888;
+    font-weight: 400;
+}
+
+main {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 250px;
+    gap: 1.5rem;
+    min-height: 0;
+}
+
+.canvas-wrapper {
+    position: relative;
+    background: #08080d;
+    border: 1px solid #1a1a20;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+#trendMap {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.controls {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    right: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+    background: rgba(10, 10, 15, 0.85);
+    border: 1px solid #2a2a30;
+    border-radius: 4px;
+    backdrop-filter: blur(10px);
+}
+
+#playPause {
+    background: #1a1a20;
+    border: 1px solid #2a2a30;
+    color: #e8e8e8;
+    padding: 0.5rem 0.875rem;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    transition: background 0.15s;
+}
+
+#playPause:hover {
+    background: #2a2a30;
+}
+
+.scrubber {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+#seasonScrubber {
+    flex: 1;
+    height: 4px;
+    background: #1a1a20;
+    border-radius: 2px;
+    outline: none;
+    appearance: none;
+}
+
+#seasonScrubber::-webkit-slider-thumb {
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #e8e8e8;
+    cursor: pointer;
+}
+
+#seasonScrubber::-moz-range-thumb {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #e8e8e8;
+    cursor: pointer;
+    border: none;
+}
+
+#currentSeason {
+    font-size: 0.875rem;
+    color: #e8e8e8;
+    min-width: 3rem;
+    text-align: center;
+}
+
+.toggles {
+    display: flex;
+    gap: 1rem;
+}
+
+.toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    cursor: pointer;
+}
+
+.toggle input[type="checkbox"] {
+    appearance: none;
+    width: 36px;
+    height: 20px;
+    background: #1a1a20;
+    border: 1px solid #2a2a30;
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.toggle input[type="checkbox"]:checked {
+    background: #4a4a50;
+}
+
+.toggle input[type="checkbox"]::before {
+    content: '';
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    background: #e8e8e8;
+    transition: transform 0.2s;
+}
+
+.toggle input[type="checkbox"]:checked::before {
+    transform: translateX(16px);
+}
+
+#sizeMode {
+    color: #888;
+}
+
+.info-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    overflow-y: auto;
+}
+
+.trending h3,
+.legend h3 {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #888;
+    margin-bottom: 0.75rem;
+    font-weight: 500;
+}
+
+#trendingList {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+#trendingList li {
+    font-size: 0.875rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    background: #0f0f14;
+    border: 1px solid #1a1a20;
+    border-radius: 3px;
+}
+
+.trend-color {
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+    flex-shrink: 0;
+}
+
+.trend-name {
+    flex: 1;
+    font-size: 0.875rem;
+}
+
+.momentum-indicator {
+    font-size: 0.75rem;
+    color: #888;
+}
+
+.momentum-indicator.up {
+    color: #6fcf97;
+}
+
+.momentum-indicator.down {
+    color: #888;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.625rem;
+    font-size: 0.875rem;
+}
+
+.legend-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 3px;
+    flex-shrink: 0;
+}
+
+.legend-icon.halo {
+    background: radial-gradient(circle, rgba(255, 214, 107, 0.3) 0%, transparent 70%);
+}
+
+.legend-icon.core {
+    background: radial-gradient(circle, rgba(255, 214, 107, 0.9) 0%, rgba(255, 214, 107, 0.2) 60%);
+}
+
+.legend-icon.trail {
+    background: linear-gradient(90deg, rgba(255, 214, 107, 0.5) 0%, transparent 100%);
+}
+
+.legend-icon.momentum-up {
+    background: radial-gradient(circle, rgba(111, 207, 151, 0.8) 0%, transparent 70%);
+}
+
+.legend-icon.momentum-down {
+    background: radial-gradient(circle, rgba(136, 136, 136, 0.5) 0%, transparent 70%);
+}

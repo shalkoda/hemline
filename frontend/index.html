@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hemline · runway trend atlas</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>hemline</h1>
+            <p class="subtitle">a movement atlas for runway fashion trends</p>
+        </header>
+
+        <main>
+            <div class="canvas-wrapper">
+                <canvas id="trendMap"></canvas>
+            </div>
+
+            <div class="controls">
+                <button id="playPause" aria-label="Play/Pause">▶</button>
+                <div class="scrubber">
+                    <input type="range" id="seasonScrubber" min="0" max="5" value="0" step="1">
+                    <span id="currentSeason">FW23</span>
+                </div>
+                <div class="toggles">
+                    <label class="toggle">
+                        <input type="checkbox" id="sizeToggle">
+                        <span>Size: <span id="sizeMode">adoption</span></span>
+                    </label>
+                </div>
+            </div>
+
+            <aside class="info-panel">
+                <div class="trending">
+                    <h3>Now trending</h3>
+                    <ul id="trendingList"></ul>
+                </div>
+                <div class="legend">
+                    <h3>Legend</h3>
+                    <div class="legend-item">
+                        <span class="legend-icon halo"></span>
+                        <span>Halo: emerging designers</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-icon core"></span>
+                        <span>Core: major houses</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-icon trail"></span>
+                        <span>Trail: previous positions</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-icon momentum-up"></span>
+                        <span>Vivid: rising trend</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-icon momentum-down"></span>
+                        <span>Muted: cooling trend</span>
+                    </div>
+                </div>
+            </aside>
+        </main>
+    </div>
+
+    <script src="/map.js"></script>
+</body>
+</html>
