@@ -24,7 +24,10 @@
             <div class="controls">
                 <button id="playPause" aria-label="Play/Pause">▶</button>
                 <div class="scrubber">
-                    <input type="range" id="seasonScrubber" min="0" max="5" value="0" step="1">
+                    <div class="timeline-wrapper">
+                        <input type="range" id="seasonScrubber" min="0" max="5" value="0" step="1">
+                        <div class="timeline" id="timeline"></div>
+                    </div>
                     <span id="currentSeason">FW23</span>
                 </div>
                 <div class="toggles">

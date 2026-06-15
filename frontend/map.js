@@ -13,6 +13,7 @@ const currentSeasonSpan = document.getElementById('currentSeason');
 const sizeToggle = document.getElementById('sizeToggle');
 const sizeModeSpan = document.getElementById('sizeMode');
 const trendingList = document.getElementById('trendingList');
+const timelineEl = document.getElementById('timeline');
 
 // Resize canvas to fit container
 function resizeCanvas() {
@@ -35,11 +36,41 @@ async function loadFrames() {
         const response = await fetch('/api/frames');
         frames = await response.json();
         scrubber.max = frames.length - 1;
+        buildTimeline();
         render();
         updateTrendingList();
     } catch (error) {
         console.error('Failed to load frames:', error);
     }
+}
+
+// Build timeline season labels
+function buildTimeline() {
+    if (!timelineEl || frames.length === 0) return;
+    timelineEl.innerHTML = '';
+    frames.forEach((frame, i) => {
+        const span = document.createElement('span');
+        span.className = 'season';
+        span.textContent = frame.season;
+        span.dataset.index = i;
+        timelineEl.appendChild(span);
+    });
+    updateTimeline();
+}
+
+// Update timeline shading based on current season
+function updateTimeline() {
+    if (!timelineEl) return;
+    const seasons = timelineEl.querySelectorAll('.season');
+    seasons.forEach((el, i) => {
+        el.classList.remove('active', 'semi');
+        const dist = Math.abs(i - currentFrameIndex);
+        if (dist === 0) {
+            el.classList.add('active');
+        } else if (dist === 1) {
+            el.classList.add('semi');
+        }
+    });
 }
 
 // Hex to RGB
@@ -207,6 +238,7 @@ function animate() {
     scrubber.value = currentFrameIndex;
     render();
     updateTrendingList();
+    updateTimeline();
 
     animationId = setTimeout(() => {
         requestAnimationFrame(animate);
@@ -230,6 +262,7 @@ scrubber.addEventListener('input', (e) => {
     currentFrameIndex = parseInt(e.target.value);
     render();
     updateTrendingList();
+    updateTimeline();
 
     if (isPlaying) {
         isPlaying = false;
