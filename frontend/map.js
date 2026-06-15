@@ -5,6 +5,11 @@ let isPlaying = false;
 let animationId = null;
 let useReach = false;
 
+// Interpolation state
+let animPos = 0;         // continuous float position (e.g. 1.4 = between frame 1 and 2)
+let animStartTime = null;
+const SEASON_DURATION = 1800; // ms per season transition
+
 const canvas = document.getElementById('trendMap');
 const ctx = canvas.getContext('2d');
 const playPauseBtn = document.getElementById('playPause');
@@ -27,7 +32,7 @@ function resizeCanvas() {
 
 window.addEventListener('resize', () => {
     resizeCanvas();
-    render();
+    renderAt(animPos);
 });
 
 // Fetch frames from API
@@ -36,9 +41,10 @@ async function loadFrames() {
         const response = await fetch('/api/frames');
         frames = await response.json();
         scrubber.max = frames.length - 1;
+        animPos = 0;
         buildTimeline();
-        render();
-        updateTrendingList();
+        renderAt(0);
+        updateTrendingList(0);
     } catch (error) {
         console.error('Failed to load frames:', error);
     }
@@ -55,17 +61,15 @@ function buildTimeline() {
         span.dataset.index = i;
         timelineEl.appendChild(span);
     });
-    updateTimeline();
+    updateTimeline(0);
 }
 
-// Update timeline shading based on scrubber float position
-function updateTimeline() {
+// Update timeline shading based on continuous float position
+function updateTimeline(pos) {
     if (!timelineEl) return;
-    const pos = parseFloat(scrubber.value);
     const seasons = timelineEl.querySelectorAll('.season');
     seasons.forEach((el, i) => {
         const dist = Math.abs(i - pos);
-        // opacity: 1 at dist=0, ~0.55 at dist=1, ~0.25 beyond
         const opacity = Math.max(0.18, 1 - dist * 0.55);
         el.style.color = `rgba(232, 232, 232, ${opacity.toFixed(3)})`;
     });
@@ -85,14 +89,42 @@ function hexToRgb(hex) {
 function adjustColorForMomentum(hex, momentum) {
     const rgb = hexToRgb(hex);
     const saturation = Math.max(0.3, Math.min(1.0, 0.7 + momentum * 0.6));
-
-    // Convert to grayscale for low momentum
     const gray = (rgb.r + rgb.g + rgb.b) / 3;
     const r = Math.round(rgb.r * saturation + gray * (1 - saturation));
     const g = Math.round(rgb.g * saturation + gray * (1 - saturation));
     const b = Math.round(rgb.b * saturation + gray * (1 - saturation));
-
     return { r, g, b };
+}
+
+// Linear interpolation
+function lerp(a, b, t) {
+    return a + (b - a) * t;
+}
+
+// Ease in-out cubic
+function easeInOut(t) {
+    return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+}
+
+// Build an interpolated trend list between two frames at blend factor t (0–1)
+function interpolateFrame(frameA, frameB, t) {
+    const et = easeInOut(t);
+    const trendsB = {};
+    frameB.trends.forEach(tr => { trendsB[tr.id] = tr; });
+
+    return frameA.trends.map(trA => {
+        const trB = trendsB[trA.id];
+        if (!trB) return { ...trA };
+        return {
+            ...trA,
+            x: lerp(trA.x, trB.x, et),
+            y: lerp(trA.y, trB.y, et),
+            weight: lerp(trA.weight, trB.weight, et),
+            reach: lerp(trA.reach, trB.reach, et),
+            major_share: lerp(trA.major_share, trB.major_share, et),
+            momentum: lerp(trA.momentum, trB.momentum, et),
+        };
+    });
 }
 
 // Draw a single trend
@@ -109,7 +141,6 @@ function drawTrend(trend, prevPositions = []) {
 
     const rgb = adjustColorForMomentum(trend.color, trend.momentum);
 
-    // Set blend mode to additive (lighter)
     ctx.globalCompositeOperation = 'lighter';
 
     // Draw trail from previous positions
@@ -119,17 +150,15 @@ function drawTrend(trend, prevPositions = []) {
             const trailX = pos.x * width;
             const trailY = pos.y * height;
             const alpha = (i + 1) / prevPositions.length * 0.3;
-
             const gradient = ctx.createRadialGradient(trailX, trailY, 0, trailX, trailY, baseRadius * 0.5);
             gradient.addColorStop(0, `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${alpha})`);
             gradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
-
             ctx.fillStyle = gradient;
             ctx.fillRect(0, 0, width, height);
         });
     }
 
-    // Draw halo (all looks, soft glow)
+    // Halo
     ctx.globalAlpha = 0.25;
     const haloGradient = ctx.createRadialGradient(x, y, 0, x, y, baseRadius * 1.5);
     haloGradient.addColorStop(0, `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, 0.4)`);
@@ -138,7 +167,7 @@ function drawTrend(trend, prevPositions = []) {
     ctx.fillStyle = haloGradient;
     ctx.fillRect(0, 0, width, height);
 
-    // Draw core (major houses, bright center)
+    // Core
     const coreSize = baseRadius * trend.major_share;
     ctx.globalAlpha = 0.7;
     const coreGradient = ctx.createRadialGradient(x, y, 0, x, y, coreSize);
@@ -148,72 +177,69 @@ function drawTrend(trend, prevPositions = []) {
     ctx.fillStyle = coreGradient;
     ctx.fillRect(0, 0, width, height);
 
-    // Reset composite operation
     ctx.globalCompositeOperation = 'source-over';
     ctx.globalAlpha = 1.0;
 
-    // Draw label
+    // Label
     ctx.fillStyle = '#e8e8e8';
     ctx.font = '11px "Space Grotesk", sans-serif';
     ctx.textAlign = 'center';
     ctx.fillText(trend.name, x, y + baseRadius * 1.8);
 }
 
-// Render current frame
-function render() {
+// Render at a continuous float position (e.g. 1.4 = blending frames 1→2 at 40%)
+function renderAt(pos) {
     if (frames.length === 0) return;
 
     const rect = canvas.getBoundingClientRect();
     const width = rect.width;
     const height = rect.height;
 
-    // Clear with dark background
     ctx.fillStyle = '#08080d';
     ctx.fillRect(0, 0, width, height);
 
-    const currentFrame = frames[currentFrameIndex];
+    const idxA = Math.min(Math.floor(pos), frames.length - 1);
+    const idxB = Math.min(idxA + 1, frames.length - 1);
+    const t = pos - idxA;
 
-    // Build trend history for trails
+    // Build interpolated trends
+    const trends = idxA === idxB ? frames[idxA].trends : interpolateFrame(frames[idxA], frames[idxB], t);
+
+    // Build trail history from previous integer frames
     const trendHistory = {};
-    for (let i = Math.max(0, currentFrameIndex - 2); i < currentFrameIndex; i++) {
-        frames[i].trends.forEach(trend => {
-            if (!trendHistory[trend.id]) {
-                trendHistory[trend.id] = [];
-            }
-            trendHistory[trend.id].push({ x: trend.x, y: trend.y });
+    for (let i = Math.max(0, idxA - 2); i < idxA; i++) {
+        frames[i].trends.forEach(tr => {
+            if (!trendHistory[tr.id]) trendHistory[tr.id] = [];
+            trendHistory[tr.id].push({ x: tr.x, y: tr.y });
         });
     }
 
-    // Sort trends by size (draw larger ones first, smaller on top)
-    const sortedTrends = [...currentFrame.trends].sort((a, b) => {
-        const sizeA = useReach ? a.reach : a.weight;
-        const sizeB = useReach ? b.reach : b.weight;
-        return sizeB - sizeA;
+    // Draw larger blobs first
+    const sorted = [...trends].sort((a, b) => {
+        return (useReach ? b.reach : b.weight) - (useReach ? a.reach : a.weight);
     });
 
-    // Draw all trends
-    sortedTrends.forEach(trend => {
-        const prevPositions = trendHistory[trend.id] || [];
-        drawTrend(trend, prevPositions);
+    sorted.forEach(trend => {
+        drawTrend(trend, trendHistory[trend.id] || []);
     });
 
-    // Update season display
-    currentSeasonSpan.textContent = currentFrame.season;
+    // Season label: show A until we're past midpoint, then B
+    const displayFrame = t < 0.5 ? frames[idxA] : frames[idxB];
+    currentSeasonSpan.textContent = displayFrame.season;
 }
 
 // Update trending list
-function updateTrendingList() {
+function updateTrendingList(frameIdx) {
     if (frames.length === 0) return;
-
-    const currentFrame = frames[currentFrameIndex];
-    const topTrends = [...currentFrame.trends]
+    const idx = Math.round(frameIdx ?? currentFrameIndex);
+    const frame = frames[Math.min(idx, frames.length - 1)];
+    const topTrends = [...frame.trends]
         .sort((a, b) => b.momentum - a.momentum)
         .slice(0, 5);
 
     trendingList.innerHTML = topTrends.map(trend => {
         const indicator = trend.momentum > 0 ? '↑' : trend.momentum < 0 ? '↓' : '−';
         const momentumClass = trend.momentum > 0 ? 'up' : 'down';
-
         return `
             <li>
                 <span class="trend-color" style="background: ${trend.color}"></span>
@@ -224,23 +250,40 @@ function updateTrendingList() {
     }).join('');
 }
 
-// Animation loop
-function animate() {
+// Animation loop using requestAnimationFrame for smooth interpolation
+function animate(timestamp) {
     if (!isPlaying) return;
 
-    currentFrameIndex++;
-    if (currentFrameIndex >= frames.length) {
-        currentFrameIndex = 0;
+    if (animStartTime === null) {
+        animStartTime = timestamp;
     }
 
-    scrubber.value = currentFrameIndex;
-    render();
-    updateTrendingList();
-    updateTimeline();
+    const elapsed = timestamp - animStartTime;
+    const progress = Math.min(elapsed / SEASON_DURATION, 1);
 
-    animationId = setTimeout(() => {
-        requestAnimationFrame(animate);
-    }, 1500);
+    // Interpolate animPos from currentFrameIndex toward next
+    const targetIndex = currentFrameIndex + 1;
+    animPos = currentFrameIndex + progress;
+
+    renderAt(animPos);
+    scrubber.value = animPos;
+    updateTimeline(animPos);
+
+    if (progress < 1) {
+        animationId = requestAnimationFrame(animate);
+    } else {
+        // Advance to next frame
+        currentFrameIndex = targetIndex >= frames.length ? 0 : targetIndex;
+        animPos = currentFrameIndex;
+        animStartTime = null;
+        updateTrendingList(currentFrameIndex);
+        scrubber.value = animPos;
+        updateTimeline(animPos);
+
+        if (isPlaying) {
+            animationId = requestAnimationFrame(animate);
+        }
+    }
 }
 
 // Controls
@@ -249,24 +292,29 @@ playPauseBtn.addEventListener('click', () => {
     playPauseBtn.textContent = isPlaying ? '⏸' : '▶';
 
     if (isPlaying) {
-        animate();
-    } else if (animationId) {
-        clearTimeout(animationId);
-        animationId = null;
+        animStartTime = null;
+        animationId = requestAnimationFrame(animate);
+    } else {
+        if (animationId) {
+            cancelAnimationFrame(animationId);
+            animationId = null;
+        }
     }
 });
 
 scrubber.addEventListener('input', (e) => {
-    currentFrameIndex = Math.round(parseFloat(e.target.value));
-    render();
-    updateTrendingList();
-    updateTimeline();
+    const val = parseFloat(e.target.value);
+    animPos = val;
+    currentFrameIndex = Math.round(val);
+    renderAt(val);
+    updateTrendingList(val);
+    updateTimeline(val);
 
     if (isPlaying) {
         isPlaying = false;
         playPauseBtn.textContent = '▶';
         if (animationId) {
-            clearTimeout(animationId);
+            cancelAnimationFrame(animationId);
             animationId = null;
         }
     }
@@ -275,7 +323,7 @@ scrubber.addEventListener('input', (e) => {
 sizeToggle.addEventListener('change', (e) => {
     useReach = e.target.checked;
     sizeModeSpan.textContent = useReach ? 'reach' : 'adoption';
-    render();
+    renderAt(animPos);
 });
 
 // Initialize
