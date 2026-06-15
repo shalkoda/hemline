@@ -125,7 +125,7 @@ function drawTrend(trend, prevPositions = []) {
 
     // Draw label
     ctx.fillStyle = '#e8e8e8';
-    ctx.font = '11px SF Mono, Monaco, monospace';
+    ctx.font = '11px "Space Grotesk", sans-serif';
     ctx.textAlign = 'center';
     ctx.fillText(trend.name, x, y + baseRadius * 1.8);
 }
@@ -246,20 +246,6 @@ sizeToggle.addEventListener('change', (e) => {
     sizeModeSpan.textContent = useReach ? 'reach' : 'adoption';
     render();
 });
-
-// Font switcher
-const fontSelect = document.getElementById('fontSelect');
-if (fontSelect) {
-    fontSelect.addEventListener('change', (e) => {
-        const body = document.body;
-        body.classList.remove('font-space', 'font-playfair');
-        if (e.target.value === 'space') {
-            body.classList.add('font-space');
-        } else if (e.target.value === 'playfair') {
-            body.classList.add('font-playfair');
-        }
-    });
-}
 
 // Initialize
 resizeCanvas();
