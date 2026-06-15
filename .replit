@@ -1,8 +1,8 @@
-run = "uvicorn src.serving.app:app --host 0.0.0.0 --port ${PORT:-8000}"
+run = "pip install -e . && uvicorn src.serving.app:app --host 0.0.0.0 --port ${PORT:-8000}"
 modules = ["python-3.11"]
 
 [nix]
-channel = "stable-23_11"
+channel = "stable-24_05"
 
 [deployment]
 run = ["sh", "-c", "uvicorn src.serving.app:app --host 0.0.0.0 --port $PORT"]
