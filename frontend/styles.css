@@ -83,7 +83,6 @@ main {
     display: flex;
     align-items: center;
     gap: 1rem;
-    justify-content: space-between;
 }
 
 #playPause {
@@ -101,15 +100,9 @@ main {
     background: #2a2a30;
 }
 
-.scrubber {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    width: 100%;
-}
 
 .timeline-wrapper {
-    flex: 1;
+    width: 100%;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -167,8 +160,9 @@ main {
 #currentSeason {
     font-size: 0.875rem;
     color: #e8e8e8;
-    min-width: 3rem;
+    min-width: 3.5rem;
     text-align: center;
+    font-weight: 500;
 }
 
 .toggles {
