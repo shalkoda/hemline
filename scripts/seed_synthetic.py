@@ -21,7 +21,7 @@ SEASONS = [
 # Core trends that persist across multiple seasons
 PERSISTENT_TRENDS = {
     "oversized-tailoring": {
-        "name": "Oversized tailoring",
+        "name": "oversized tailoring",
         "color": "#2c2c3a",
         "base_x": 0.35,
         "base_y": 0.45,
@@ -31,7 +31,7 @@ PERSISTENT_TRENDS = {
         "variance": 0.05,
     },
     "quiet-luxury": {
-        "name": "Quiet luxury neutrals",
+        "name": "quiet luxury neutrals",
         "color": "#b8a896",
         "base_x": 0.50,
         "base_y": 0.60,
@@ -41,7 +41,7 @@ PERSISTENT_TRENDS = {
         "variance": 0.03,
     },
     "monochrome-black": {
-        "name": "Monochrome black",
+        "name": "monochrome black",
         "color": "#1a1a1a",
         "base_x": 0.25,
         "base_y": 0.35,
@@ -55,7 +55,7 @@ PERSISTENT_TRENDS = {
 # Seasonal trends (appear/fade based on season)
 SEASONAL_TRENDS = {
     "butter-yellow": {
-        "name": "Butter yellow",
+        "name": "butter yellow",
         "color": "#ffd86b",
         "base_x": 0.65,
         "base_y": 0.70,
@@ -64,7 +64,7 @@ SEASONAL_TRENDS = {
         "major_share": 0.55,
     },
     "dopamine-brights": {
-        "name": "Dopamine brights",
+        "name": "dopamine brights",
         "color": "#ff4d6d",
         "base_x": 0.75,
         "base_y": 0.55,
@@ -77,7 +77,7 @@ SEASONAL_TRENDS = {
 # Emerging trends (start small, grow over time)
 EMERGING_TRENDS = {
     "y2k-metallics": {
-        "name": "Y2K metallics",
+        "name": "y2k metallics",
         "color": "#c0c0d8",
         "base_x": 0.80,
         "base_y": 0.40,
@@ -86,7 +86,7 @@ EMERGING_TRENDS = {
         "major_share": 0.42,
     },
     "utility-technical": {
-        "name": "Utility technical",
+        "name": "utility technical",
         "color": "#556b2f",
         "base_x": 0.45,
         "base_y": 0.25,
@@ -99,7 +99,7 @@ EMERGING_TRENDS = {
 # Fading trends (start high, decline)
 FADING_TRENDS = {
     "barbiecore-pink": {
-        "name": "Barbiecore pink",
+        "name": "barbiecore pink",
         "color": "#ff69b4",
         "base_x": 0.70,
         "base_y": 0.80,

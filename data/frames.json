@@ -5,7 +5,7 @@
     "trends": [
       {
         "id": "oversized-tailoring",
-        "name": "Oversized tailoring",
+        "name": "oversized tailoring",
         "color": "#2c2c3a",
         "x": 0.3639426798457883,
         "y": 0.4025010755222667,
@@ -17,7 +17,7 @@
       },
       {
         "id": "quiet-luxury",
-        "name": "Quiet luxury neutrals",
+        "name": "quiet luxury neutrals",
         "color": "#b8a896",
         "x": 0.5054295507469424,
         "y": 0.571906960768907,
@@ -29,7 +29,7 @@
       },
       {
         "id": "monochrome-black",
-        "name": "Monochrome black",
+        "name": "monochrome black",
         "color": "#1a1a1a",
         "x": 0.2672815690337923,
         "y": 0.36610599788721887,
@@ -41,7 +41,7 @@
       },
       {
         "id": "butter-yellow",
-        "name": "Butter yellow",
+        "name": "butter yellow",
         "color": "#ffd86b",
         "x": 0.6603522946851907,
         "y": 0.6863863726550755,
@@ -53,7 +53,7 @@
       },
       {
         "id": "dopamine-brights",
-        "name": "Dopamine brights",
+        "name": "dopamine brights",
         "color": "#ff4d6d",
         "x": 0.7340884110607939,
         "y": 0.5451970920254935,
@@ -65,7 +65,7 @@
       },
       {
         "id": "barbiecore-pink",
-        "name": "Barbiecore pink",
+        "name": "barbiecore pink",
         "color": "#ff69b4",
         "x": 0.6818329753462264,
         "y": 0.7891159310260619,
@@ -83,7 +83,7 @@
     "trends": [
       {
         "id": "oversized-tailoring",
-        "name": "Oversized tailoring",
+        "name": "oversized tailoring",
         "color": "#2c2c3a",
         "x": 0.38664836667552693,
         "y": 0.43801262250391665,
@@ -95,7 +95,7 @@
       },
       {
         "id": "quiet-luxury",
-        "name": "Quiet luxury neutrals",
+        "name": "quiet luxury neutrals",
         "color": "#b8a896",
         "x": 0.4825704218462893,
         "y": 0.5860186693229468,
@@ -107,7 +107,7 @@
       },
       {
         "id": "monochrome-black",
-        "name": "Monochrome black",
+        "name": "monochrome black",
         "color": "#1a1a1a",
         "x": 0.25273119016237666,
         "y": 0.32958487401211406,
@@ -119,7 +119,7 @@
       },
       {
         "id": "butter-yellow",
-        "name": "Butter yellow",
+        "name": "butter yellow",
         "color": "#ffd86b",
         "x": 0.657384570039595,
         "y": 0.7137140768075924,
@@ -131,7 +131,7 @@
       },
       {
         "id": "dopamine-brights",
-        "name": "Dopamine brights",
+        "name": "dopamine brights",
         "color": "#ff4d6d",
         "x": 0.7460465914808931,
         "y": 0.5326475442084619,
@@ -143,7 +143,7 @@
       },
       {
         "id": "y2k-metallics",
-        "name": "Y2K metallics",
+        "name": "y2k metallics",
         "color": "#c0c0d8",
         "x": 0.8062175466117952,
         "y": 0.39582527604242657,
@@ -155,7 +155,7 @@
       },
       {
         "id": "barbiecore-pink",
-        "name": "Barbiecore pink",
+        "name": "barbiecore pink",
         "color": "#ff69b4",
         "x": 0.7159129153440991,
         "y": 0.795976020205616,
@@ -173,7 +173,7 @@
     "trends": [
       {
         "id": "oversized-tailoring",
-        "name": "Oversized tailoring",
+        "name": "oversized tailoring",
         "color": "#2c2c3a",
         "x": 0.30909094121737934,
         "y": 0.40471163754247347,
@@ -185,7 +185,7 @@
       },
       {
         "id": "quiet-luxury",
-        "name": "Quiet luxury neutrals",
+        "name": "quiet luxury neutrals",
         "color": "#b8a896",
         "x": 0.5057845418439184,
         "y": 0.5930860387004699,
@@ -197,7 +197,7 @@
       },
       {
         "id": "monochrome-black",
-        "name": "Monochrome black",
+        "name": "monochrome black",
         "color": "#1a1a1a",
         "x": 0.26442267282052145,
         "y": 0.3191641394386949,
@@ -209,7 +209,7 @@
       },
       {
         "id": "butter-yellow",
-        "name": "Butter yellow",
+        "name": "butter yellow",
         "color": "#ffd86b",
         "x": 0.6344620869438351,
         "y": 0.6973906100267642,
@@ -221,7 +221,7 @@
       },
       {
         "id": "dopamine-brights",
-        "name": "Dopamine brights",
+        "name": "dopamine brights",
         "color": "#ff4d6d",
         "x": 0.7688755239548045,
         "y": 0.5604784879620827,
@@ -233,7 +233,7 @@
       },
       {
         "id": "y2k-metallics",
-        "name": "Y2K metallics",
+        "name": "y2k metallics",
         "color": "#c0c0d8",
         "x": 0.7861135707419854,
         "y": 0.41050043200300607,
@@ -245,7 +245,7 @@
       },
       {
         "id": "utility-technical",
-        "name": "Utility technical",
+        "name": "utility technical",
         "color": "#556b2f",
         "x": 0.4539577833784092,
         "y": 0.2495442283211579,
@@ -257,7 +257,7 @@
       },
       {
         "id": "barbiecore-pink",
-        "name": "Barbiecore pink",
+        "name": "barbiecore pink",
         "color": "#ff69b4",
         "x": 0.6895780924135223,
         "y": 0.7896348636978894,
@@ -275,7 +275,7 @@
     "trends": [
       {
         "id": "oversized-tailoring",
-        "name": "Oversized tailoring",
+        "name": "oversized tailoring",
         "color": "#2c2c3a",
         "x": 0.38160232534200883,
         "y": 0.49779844936773343,
@@ -287,7 +287,7 @@
       },
       {
         "id": "quiet-luxury",
-        "name": "Quiet luxury neutrals",
+        "name": "quiet luxury neutrals",
         "color": "#b8a896",
         "x": 0.48590339773640356,
         "y": 0.6223459824651154,
@@ -299,7 +299,7 @@
       },
       {
         "id": "monochrome-black",
-        "name": "Monochrome black",
+        "name": "monochrome black",
         "color": "#1a1a1a",
         "x": 0.26703591782552977,
         "y": 0.3419193839997943,
@@ -311,7 +311,7 @@
       },
       {
         "id": "butter-yellow",
-        "name": "Butter yellow",
+        "name": "butter yellow",
         "color": "#ffd86b",
         "x": 0.6348401678347306,
         "y": 0.6889878934812622,
@@ -323,7 +323,7 @@
       },
       {
         "id": "dopamine-brights",
-        "name": "Dopamine brights",
+        "name": "dopamine brights",
         "color": "#ff4d6d",
         "x": 0.7302876335594037,
         "y": 0.5583136378619382,
@@ -335,7 +335,7 @@
       },
       {
         "id": "y2k-metallics",
-        "name": "Y2K metallics",
+        "name": "y2k metallics",
         "color": "#c0c0d8",
         "x": 0.7828342939955462,
         "y": 0.38952018537475985,
@@ -347,7 +347,7 @@
       },
       {
         "id": "utility-technical",
-        "name": "Utility technical",
+        "name": "utility technical",
         "color": "#556b2f",
         "x": 0.439719889695829,
         "y": 0.24891891771778374,
@@ -365,7 +365,7 @@
     "trends": [
       {
         "id": "oversized-tailoring",
-        "name": "Oversized tailoring",
+        "name": "oversized tailoring",
         "color": "#2c2c3a",
         "x": 0.30606126740770134,
         "y": 0.47282135884411824,
@@ -377,7 +377,7 @@
       },
       {
         "id": "quiet-luxury",
-        "name": "Quiet luxury neutrals",
+        "name": "quiet luxury neutrals",
         "color": "#b8a896",
         "x": 0.47841093782568644,
         "y": 0.581009282147234,
@@ -389,7 +389,7 @@
       },
       {
         "id": "monochrome-black",
-        "name": "Monochrome black",
+        "name": "monochrome black",
         "color": "#1a1a1a",
         "x": 0.2140470663619905,
         "y": 0.3899425974730181,
@@ -401,7 +401,7 @@
       },
       {
         "id": "butter-yellow",
-        "name": "Butter yellow",
+        "name": "butter yellow",
         "color": "#ffd86b",
         "x": 0.6366524444241566,
         "y": 0.6994256450180287,
@@ -413,7 +413,7 @@
       },
       {
         "id": "dopamine-brights",
-        "name": "Dopamine brights",
+        "name": "dopamine brights",
         "color": "#ff4d6d",
         "x": 0.730086215134057,
         "y": 0.5456168703035126,
@@ -425,7 +425,7 @@
       },
       {
         "id": "y2k-metallics",
-        "name": "Y2K metallics",
+        "name": "y2k metallics",
         "color": "#c0c0d8",
         "x": 0.7861918730109626,
         "y": 0.3918683130197826,
@@ -437,7 +437,7 @@
       },
       {
         "id": "utility-technical",
-        "name": "Utility technical",
+        "name": "utility technical",
         "color": "#556b2f",
         "x": 0.43228661091629933,
         "y": 0.25336710377835886,
@@ -455,7 +455,7 @@
     "trends": [
       {
         "id": "oversized-tailoring",
-        "name": "Oversized tailoring",
+        "name": "oversized tailoring",
         "color": "#2c2c3a",
         "x": 0.367521255360409,
         "y": 0.42352038950009313,
@@ -467,7 +467,7 @@
       },
       {
         "id": "quiet-luxury",
-        "name": "Quiet luxury neutrals",
+        "name": "quiet luxury neutrals",
         "color": "#b8a896",
         "x": 0.5071628906199261,
         "y": 0.5951534949201523,
@@ -479,7 +479,7 @@
       },
       {
         "id": "monochrome-black",
-        "name": "Monochrome black",
+        "name": "monochrome black",
         "color": "#1a1a1a",
         "x": 0.26357807798158633,
         "y": 0.33513470902364606,
@@ -491,7 +491,7 @@
       },
       {
         "id": "butter-yellow",
-        "name": "Butter yellow",
+        "name": "butter yellow",
         "color": "#ffd86b",
         "x": 0.6426470878508742,
         "y": 0.7100745796965761,
@@ -503,7 +503,7 @@
       },
       {
         "id": "dopamine-brights",
-        "name": "Dopamine brights",
+        "name": "dopamine brights",
         "color": "#ff4d6d",
         "x": 0.7329304288439853,
         "y": 0.5385261724906817,
@@ -515,7 +515,7 @@
       },
       {
         "id": "y2k-metallics",
-        "name": "Y2K metallics",
+        "name": "y2k metallics",
         "color": "#c0c0d8",
         "x": 0.7947810835495555,
         "y": 0.3863098732942893,
@@ -527,7 +527,7 @@
       },
       {
         "id": "utility-technical",
-        "name": "Utility technical",
+        "name": "utility technical",
         "color": "#556b2f",
         "x": 0.45671452814850333,
         "y": 0.25218409129958713,
