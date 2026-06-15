@@ -1,0 +1,542 @@
+[
+  {
+    "season": "FW23",
+    "season_long": "fall / winter 2023",
+    "trends": [
+      {
+        "id": "oversized-tailoring",
+        "name": "Oversized tailoring",
+        "color": "#2c2c3a",
+        "x": 0.3639426798457883,
+        "y": 0.4025010755222667,
+        "weight": 0.828,
+        "reach": 0.861,
+        "major_share": 0.874,
+        "momentum": 0.0,
+        "look_count": 38
+      },
+      {
+        "id": "quiet-luxury",
+        "name": "Quiet luxury neutrals",
+        "color": "#b8a896",
+        "x": 0.5054295507469424,
+        "y": 0.571906960768907,
+        "weight": 0.776,
+        "reach": 0.81,
+        "major_share": 0.93,
+        "momentum": 0.0,
+        "look_count": 39
+      },
+      {
+        "id": "monochrome-black",
+        "name": "Monochrome black",
+        "color": "#1a1a1a",
+        "x": 0.2672815690337923,
+        "y": 0.36610599788721887,
+        "weight": 0.694,
+        "reach": 0.641,
+        "major_share": 0.678,
+        "momentum": 0.0,
+        "look_count": 29
+      },
+      {
+        "id": "butter-yellow",
+        "name": "Butter yellow",
+        "color": "#ffd86b",
+        "x": 0.6603522946851907,
+        "y": 0.6863863726550755,
+        "weight": 0.342,
+        "reach": 0.279,
+        "major_share": 0.522,
+        "momentum": 0.0,
+        "look_count": 22
+      },
+      {
+        "id": "dopamine-brights",
+        "name": "Dopamine brights",
+        "color": "#ff4d6d",
+        "x": 0.7340884110607939,
+        "y": 0.5451970920254935,
+        "weight": 0.386,
+        "reach": 0.327,
+        "major_share": 0.456,
+        "momentum": 0.0,
+        "look_count": 15
+      },
+      {
+        "id": "barbiecore-pink",
+        "name": "Barbiecore pink",
+        "color": "#ff69b4",
+        "x": 0.6818329753462264,
+        "y": 0.7891159310260619,
+        "weight": 0.7,
+        "reach": 0.637,
+        "major_share": 0.558,
+        "momentum": 0.0,
+        "look_count": 37
+      }
+    ]
+  },
+  {
+    "season": "SS24",
+    "season_long": "spring / summer 2024",
+    "trends": [
+      {
+        "id": "oversized-tailoring",
+        "name": "Oversized tailoring",
+        "color": "#2c2c3a",
+        "x": 0.38664836667552693,
+        "y": 0.43801262250391665,
+        "weight": 0.845,
+        "reach": 0.915,
+        "major_share": 0.816,
+        "momentum": 0.017,
+        "look_count": 48
+      },
+      {
+        "id": "quiet-luxury",
+        "name": "Quiet luxury neutrals",
+        "color": "#b8a896",
+        "x": 0.4825704218462893,
+        "y": 0.5860186693229468,
+        "weight": 0.826,
+        "reach": 0.885,
+        "major_share": 0.931,
+        "momentum": 0.05,
+        "look_count": 41
+      },
+      {
+        "id": "monochrome-black",
+        "name": "Monochrome black",
+        "color": "#1a1a1a",
+        "x": 0.25273119016237666,
+        "y": 0.32958487401211406,
+        "weight": 0.697,
+        "reach": 0.633,
+        "major_share": 0.743,
+        "momentum": 0.003,
+        "look_count": 36
+      },
+      {
+        "id": "butter-yellow",
+        "name": "Butter yellow",
+        "color": "#ffd86b",
+        "x": 0.657384570039595,
+        "y": 0.7137140768075924,
+        "weight": 0.778,
+        "reach": 0.711,
+        "major_share": 0.503,
+        "momentum": 0.436,
+        "look_count": 43
+      },
+      {
+        "id": "dopamine-brights",
+        "name": "Dopamine brights",
+        "color": "#ff4d6d",
+        "x": 0.7460465914808931,
+        "y": 0.5326475442084619,
+        "weight": 0.691,
+        "reach": 0.645,
+        "major_share": 0.502,
+        "momentum": 0.305,
+        "look_count": 35
+      },
+      {
+        "id": "y2k-metallics",
+        "name": "Y2K metallics",
+        "color": "#c0c0d8",
+        "x": 0.8062175466117952,
+        "y": 0.39582527604242657,
+        "weight": 0.25,
+        "reach": 0.225,
+        "major_share": 0.416,
+        "momentum": 0.0,
+        "look_count": 15
+      },
+      {
+        "id": "barbiecore-pink",
+        "name": "Barbiecore pink",
+        "color": "#ff69b4",
+        "x": 0.7159129153440991,
+        "y": 0.795976020205616,
+        "weight": 0.455,
+        "reach": 0.388,
+        "major_share": 0.65,
+        "momentum": -0.245,
+        "look_count": 32
+      }
+    ]
+  },
+  {
+    "season": "FW24",
+    "season_long": "fall / winter 2024",
+    "trends": [
+      {
+        "id": "oversized-tailoring",
+        "name": "Oversized tailoring",
+        "color": "#2c2c3a",
+        "x": 0.30909094121737934,
+        "y": 0.40471163754247347,
+        "weight": 0.811,
+        "reach": 0.869,
+        "major_share": 0.879,
+        "momentum": -0.034,
+        "look_count": 48
+      },
+      {
+        "id": "quiet-luxury",
+        "name": "Quiet luxury neutrals",
+        "color": "#b8a896",
+        "x": 0.5057845418439184,
+        "y": 0.5930860387004699,
+        "weight": 0.806,
+        "reach": 0.854,
+        "major_share": 0.895,
+        "momentum": -0.02,
+        "look_count": 35
+      },
+      {
+        "id": "monochrome-black",
+        "name": "Monochrome black",
+        "color": "#1a1a1a",
+        "x": 0.26442267282052145,
+        "y": 0.3191641394386949,
+        "weight": 0.731,
+        "reach": 0.696,
+        "major_share": 0.727,
+        "momentum": 0.034,
+        "look_count": 41
+      },
+      {
+        "id": "butter-yellow",
+        "name": "Butter yellow",
+        "color": "#ffd86b",
+        "x": 0.6344620869438351,
+        "y": 0.6973906100267642,
+        "weight": 0.345,
+        "reach": 0.323,
+        "major_share": 0.588,
+        "momentum": -0.433,
+        "look_count": 20
+      },
+      {
+        "id": "dopamine-brights",
+        "name": "Dopamine brights",
+        "color": "#ff4d6d",
+        "x": 0.7688755239548045,
+        "y": 0.5604784879620827,
+        "weight": 0.401,
+        "reach": 0.327,
+        "major_share": 0.493,
+        "momentum": -0.29,
+        "look_count": 21
+      },
+      {
+        "id": "y2k-metallics",
+        "name": "Y2K metallics",
+        "color": "#c0c0d8",
+        "x": 0.7861135707419854,
+        "y": 0.41050043200300607,
+        "weight": 0.525,
+        "reach": 0.477,
+        "major_share": 0.448,
+        "momentum": 0.275,
+        "look_count": 21
+      },
+      {
+        "id": "utility-technical",
+        "name": "Utility technical",
+        "color": "#556b2f",
+        "x": 0.4539577833784092,
+        "y": 0.2495442283211579,
+        "weight": 0.25,
+        "reach": 0.177,
+        "major_share": 0.486,
+        "momentum": 0.0,
+        "look_count": 16
+      },
+      {
+        "id": "barbiecore-pink",
+        "name": "Barbiecore pink",
+        "color": "#ff69b4",
+        "x": 0.6895780924135223,
+        "y": 0.7896348636978894,
+        "weight": 0.21,
+        "reach": 0.164,
+        "major_share": 0.558,
+        "momentum": -0.245,
+        "look_count": 20
+      }
+    ]
+  },
+  {
+    "season": "SS25",
+    "season_long": "spring / summer 2025",
+    "trends": [
+      {
+        "id": "oversized-tailoring",
+        "name": "Oversized tailoring",
+        "color": "#2c2c3a",
+        "x": 0.38160232534200883,
+        "y": 0.49779844936773343,
+        "weight": 0.853,
+        "reach": 0.881,
+        "major_share": 0.866,
+        "momentum": 0.042,
+        "look_count": 42
+      },
+      {
+        "id": "quiet-luxury",
+        "name": "Quiet luxury neutrals",
+        "color": "#b8a896",
+        "x": 0.48590339773640356,
+        "y": 0.6223459824651154,
+        "weight": 0.795,
+        "reach": 0.828,
+        "major_share": 0.924,
+        "momentum": -0.011,
+        "look_count": 40
+      },
+      {
+        "id": "monochrome-black",
+        "name": "Monochrome black",
+        "color": "#1a1a1a",
+        "x": 0.26703591782552977,
+        "y": 0.3419193839997943,
+        "weight": 0.714,
+        "reach": 0.656,
+        "major_share": 0.74,
+        "momentum": -0.017,
+        "look_count": 44
+      },
+      {
+        "id": "butter-yellow",
+        "name": "Butter yellow",
+        "color": "#ffd86b",
+        "x": 0.6348401678347306,
+        "y": 0.6889878934812622,
+        "weight": 0.734,
+        "reach": 0.689,
+        "major_share": 0.523,
+        "momentum": 0.389,
+        "look_count": 38
+      },
+      {
+        "id": "dopamine-brights",
+        "name": "Dopamine brights",
+        "color": "#ff4d6d",
+        "x": 0.7302876335594037,
+        "y": 0.5583136378619382,
+        "weight": 0.606,
+        "reach": 0.53,
+        "major_share": 0.433,
+        "momentum": 0.205,
+        "look_count": 35
+      },
+      {
+        "id": "y2k-metallics",
+        "name": "Y2K metallics",
+        "color": "#c0c0d8",
+        "x": 0.7828342939955462,
+        "y": 0.38952018537475985,
+        "weight": 0.817,
+        "reach": 0.75,
+        "major_share": 0.383,
+        "momentum": 0.292,
+        "look_count": 50
+      },
+      {
+        "id": "utility-technical",
+        "name": "Utility technical",
+        "color": "#556b2f",
+        "x": 0.439719889695829,
+        "y": 0.24891891771778374,
+        "weight": 0.433,
+        "reach": 0.378,
+        "major_share": 0.459,
+        "momentum": 0.183,
+        "look_count": 29
+      }
+    ]
+  },
+  {
+    "season": "FW25",
+    "season_long": "fall / winter 2025",
+    "trends": [
+      {
+        "id": "oversized-tailoring",
+        "name": "Oversized tailoring",
+        "color": "#2c2c3a",
+        "x": 0.30606126740770134,
+        "y": 0.47282135884411824,
+        "weight": 0.88,
+        "reach": 0.907,
+        "major_share": 0.819,
+        "momentum": 0.027,
+        "look_count": 53
+      },
+      {
+        "id": "quiet-luxury",
+        "name": "Quiet luxury neutrals",
+        "color": "#b8a896",
+        "x": 0.47841093782568644,
+        "y": 0.581009282147234,
+        "weight": 0.798,
+        "reach": 0.87,
+        "major_share": 0.878,
+        "momentum": 0.003,
+        "look_count": 37
+      },
+      {
+        "id": "monochrome-black",
+        "name": "Monochrome black",
+        "color": "#1a1a1a",
+        "x": 0.2140470663619905,
+        "y": 0.3899425974730181,
+        "weight": 0.727,
+        "reach": 0.705,
+        "major_share": 0.743,
+        "momentum": 0.013,
+        "look_count": 38
+      },
+      {
+        "id": "butter-yellow",
+        "name": "Butter yellow",
+        "color": "#ffd86b",
+        "x": 0.6366524444241566,
+        "y": 0.6994256450180287,
+        "weight": 0.321,
+        "reach": 0.265,
+        "major_share": 0.506,
+        "momentum": -0.413,
+        "look_count": 23
+      },
+      {
+        "id": "dopamine-brights",
+        "name": "Dopamine brights",
+        "color": "#ff4d6d",
+        "x": 0.730086215134057,
+        "y": 0.5456168703035126,
+        "weight": 0.443,
+        "reach": 0.41,
+        "major_share": 0.459,
+        "momentum": -0.163,
+        "look_count": 32
+      },
+      {
+        "id": "y2k-metallics",
+        "name": "Y2K metallics",
+        "color": "#c0c0d8",
+        "x": 0.7861918730109626,
+        "y": 0.3918683130197826,
+        "weight": 0.847,
+        "reach": 0.802,
+        "major_share": 0.424,
+        "momentum": 0.03,
+        "look_count": 47
+      },
+      {
+        "id": "utility-technical",
+        "name": "Utility technical",
+        "color": "#556b2f",
+        "x": 0.43228661091629933,
+        "y": 0.25336710377835886,
+        "weight": 0.617,
+        "reach": 0.567,
+        "major_share": 0.535,
+        "momentum": 0.184,
+        "look_count": 30
+      }
+    ]
+  },
+  {
+    "season": "SS26",
+    "season_long": "spring / summer 2026",
+    "trends": [
+      {
+        "id": "oversized-tailoring",
+        "name": "Oversized tailoring",
+        "color": "#2c2c3a",
+        "x": 0.367521255360409,
+        "y": 0.42352038950009313,
+        "weight": 0.812,
+        "reach": 0.885,
+        "major_share": 0.825,
+        "momentum": -0.068,
+        "look_count": 36
+      },
+      {
+        "id": "quiet-luxury",
+        "name": "Quiet luxury neutrals",
+        "color": "#b8a896",
+        "x": 0.5071628906199261,
+        "y": 0.5951534949201523,
+        "weight": 0.805,
+        "reach": 0.856,
+        "major_share": 0.963,
+        "momentum": 0.007,
+        "look_count": 41
+      },
+      {
+        "id": "monochrome-black",
+        "name": "Monochrome black",
+        "color": "#1a1a1a",
+        "x": 0.26357807798158633,
+        "y": 0.33513470902364606,
+        "weight": 0.681,
+        "reach": 0.609,
+        "major_share": 0.715,
+        "momentum": -0.046,
+        "look_count": 43
+      },
+      {
+        "id": "butter-yellow",
+        "name": "Butter yellow",
+        "color": "#ffd86b",
+        "x": 0.6426470878508742,
+        "y": 0.7100745796965761,
+        "weight": 0.707,
+        "reach": 0.655,
+        "major_share": 0.6,
+        "momentum": 0.386,
+        "look_count": 33
+      },
+      {
+        "id": "dopamine-brights",
+        "name": "Dopamine brights",
+        "color": "#ff4d6d",
+        "x": 0.7329304288439853,
+        "y": 0.5385261724906817,
+        "weight": 0.627,
+        "reach": 0.603,
+        "major_share": 0.518,
+        "momentum": 0.184,
+        "look_count": 33
+      },
+      {
+        "id": "y2k-metallics",
+        "name": "Y2K metallics",
+        "color": "#c0c0d8",
+        "x": 0.7947810835495555,
+        "y": 0.3863098732942893,
+        "weight": 0.833,
+        "reach": 0.796,
+        "major_share": 0.431,
+        "momentum": -0.014,
+        "look_count": 36
+      },
+      {
+        "id": "utility-technical",
+        "name": "Utility technical",
+        "color": "#556b2f",
+        "x": 0.45671452814850333,
+        "y": 0.25218409129958713,
+        "weight": 0.843,
+        "reach": 0.769,
+        "major_share": 0.538,
+        "momentum": 0.226,
+        "look_count": 45
+      }
+    ]
+  }
+]
